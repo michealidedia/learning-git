@@ -21,4 +21,19 @@ plt.xlabel("Confirmed Cases")
 plt.ylabel("Deaths")
 plt.xticks(rotation=45)
 plt.tight_layout()
+#plt.show()
+
+#Create the time series plot
+plt.figure(figsize=(6,10))
+sns.lineplot(x="Date",y="Confirmed", data=data, markers='o', markersize=4, label='Confirmed Cases')
+sns.lineplot(x="Date",y="Deaths", data =data, markers='o',markersize=4,label="Deaths")
+plt.title("Trend of COVID-19 Cases Over Time")
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%b %Y'))
+plt.tight_layout()
+plt.legend()
 plt.show()
+
+?sns
